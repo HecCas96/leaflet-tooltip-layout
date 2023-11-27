@@ -3,7 +3,8 @@ import {
   initialize,
   resetMarker,
   getMarkers,
-  getLine
+  getLine,
+  redrawLines,
 } from '../lib';
 import {
   icon,
@@ -19,12 +20,13 @@ let map = L.map(mapContainerElId, {
 }).setView([40.2672, -86.1349], 4);
 
 // background layer
-L.tileLayer(config.mapTileLayerUrlTemplate, {
-  maxZoom: 18,
-  id: 'mapbox.streets'
-}).addTo(map);
+// L.tileLayer(config.mapTileLayerUrlTemplate, {
+//   maxZoom: 18,
+//   id: 'mapbox.streets'
+// }).addTo(map);
 
-let markerList = [];
+// init plugin first, then add markers
+initialize(map, onPolylineCreated);
 
 L.geoJSON(testData, {
   pointToLayer: function (feature, latlng) {
@@ -102,6 +104,5 @@ function onPolylineCreated(ply) {
     color: '#90A4AE'
   })
 }
-
-// init plugin
-initialize(map, onPolylineCreated);
+// force line redraw
+redrawLines(map)
