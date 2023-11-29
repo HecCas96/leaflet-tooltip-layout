@@ -1,5 +1,5 @@
 {
-  "name": "leaflet-tooltip-layout",
+  "name": "@heccas96/leaflet-tooltip-layout",
   "version": "0.1.2",
   "description": "Avoid tooltip overlapping and make users find out the relationship between each tooltip and marker easily",
   "private": false,
@@ -26,5 +26,19 @@
   },
   "dependencies": {
     "leaflet": "^1.9.4"
-  }
+  },
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HecCas96/leaflet-tooltip-layout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HecCas96/leaflet-tooltip-layout/issues"
+  },
+  "homepage": "https://github.com/HecCas96/leaflet-tooltip-layout#readme"
 }
